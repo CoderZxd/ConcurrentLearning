@@ -15,8 +15,7 @@ public class SemaphoreTest {
         int person = 8;
         Semaphore semaphore = new Semaphore(5);
         for(int i = 0;i < person;i++){
-            Thread temp = new Thread(new Person(person,semaphore));
-            temp.start();
+            new Thread(new Person(person,semaphore)).start();
         }
     }
     static class Person implements Runnable{
