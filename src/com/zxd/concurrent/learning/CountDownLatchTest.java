@@ -12,11 +12,12 @@ import java.util.concurrent.CountDownLatch;
 public class CountDownLatchTest {
 
     public static void main(String[] args) throws InterruptedException {
+        System.out.println("主线程"+Thread.currentThread().getName()+"正在执行.......");
         CountDownLatch latch = new CountDownLatch(2);
         ThreadTest test_1 = new ThreadTest(latch,3000);
         ThreadTest test_2 = new ThreadTest(latch,5000);
-        test_1.run();
-        test_2.run();
+        test_1.start();
+        test_2.start();
         System.out.println("等待2个子线程执行完毕........");
         latch.await();
         System.out.println("2个子线程已经执行完毕..................");
@@ -25,7 +26,7 @@ public class CountDownLatchTest {
     }
 }
 
-class ThreadTest implements Runnable{
+class ThreadTest extends Thread{
     private CountDownLatch countDownLatch = null;
     private long sleep = 0L;
 
