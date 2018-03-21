@@ -17,6 +17,8 @@ public boolean await(long timeout, TimeUnit unit) throws InterruptedException { 
 public void countDown() { };  //将count值减1
 ````
 
+----
+
 **CyclicBarrier用法**
 
 字面意思回环栅栏，通过它可以实现让一组线程等待至某个状态之后再全部同时执行。叫做回环是因为当所有等待线程都被释放以后，CyclicBarrier可以被重用。我们暂且把这个状态就叫做barrier，当调用`await()`方法之后，线程就处于barrier了。
@@ -43,6 +45,9 @@ public int await(long timeout, TimeUnit unit)throws InterruptedException,BrokenB
 
 };
 ````
+
+----
+
 
 **Semaphore用法**
 
