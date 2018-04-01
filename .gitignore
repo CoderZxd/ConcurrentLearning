@@ -9,3 +9,7 @@ out
 gen
 /ConcurrentLearning.iml
 /.idea/*
+
+/build/*
+/build/
+/.idea/
