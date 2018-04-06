@@ -14,7 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
  **/
 public class FairOrNoFairLock {
 
-    private Lock lock;
+    private ReentrantLock lock;
 
     public FairOrNoFairLock(boolean isFair){
         this.lock = new ReentrantLock(isFair);
@@ -23,8 +23,11 @@ public class FairOrNoFairLock {
     public void serviceMethod(){
         try {
             lock.lock();
-            System.out.println("Thread Name:"+Thread.currentThread().getName()+"获得锁");
-        }finally {
+            Thread.sleep(1000);
+            System.out.println("Thread Name:"+Thread.currentThread().getName()+"获得锁，getHoldCount = "+lock.getHoldCount()+",getQueueLength = "+lock.getQueueLength());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
             lock.unlock();
         }
     }
@@ -59,7 +62,7 @@ public class FairOrNoFairLock {
     }
 
     public static void main(String[] args){
-        fair();
+//        fair();
         noFair();
     }
 }
