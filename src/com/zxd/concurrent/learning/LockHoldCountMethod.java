@@ -7,7 +7,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Title: ${FILE_NAME}
  * @Project: ConcurrentLearning
  * @Package com.zxd.concurrent.learning
- * @description: TODO:一句话描述信息
+ * @description: getHoldCount()的作用是查询当前线程保持此锁定的个数，也就是调用lock()方法的此时
+ * @description: getQueueLength()的作用是返回正等待获取此锁定的线程估计数
  * @Version 1.0
  * @create 2018-04-06 23:00
  **/

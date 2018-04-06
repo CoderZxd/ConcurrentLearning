@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Title: ${FILE_NAME}
  * @Project: ConcurrentLearning
  * @Package com.zxd.concurrent.learning
- * @description: TODO:一句话描述信息
+ * @description: getWaitQueueLength(Condition condition)的作用是返回等待与此锁定相关的给定条件Condition的线程估计数
  * @Version 1.0
  * @create 2018-04-06 23:40
  **/
