@@ -33,6 +33,7 @@ public class EnumTest {
     public static void main(String[] args){
         Size size  = Size.LARGE;
         System.out.println(size);
+        System.out.println(size.toString());
         System.out.println(size.getAbbreviation());
         size = Enum.valueOf(Size.class,"MEDIUM");
         System.out.println(size == Size.MEDIUM);
